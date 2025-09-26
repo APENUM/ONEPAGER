@@ -674,6 +674,8 @@ button:hover {
     color: #ff0064;
 }
 
+
+
 /* --- Navigation Arrow Buttons (Old Version) --- */
 .nav-buttons {
     position: fixed;
@@ -909,6 +911,8 @@ button:hover {
     border-radius: 12px;
     padding: 40px;
     color: #ffffff;
+    height: auto;
+    min-height: fit-content;
     overflow-y: auto;
 }
 
@@ -920,7 +924,7 @@ button:hover {
 }
 
 .text-container h3 {
-    color: inherit; /* This will inherit the same color as h2 */
+    color: #00ffc1;
     font-size: 1.5em;
     margin-top: 2em;
     margin-bottom: 1em;
