@@ -955,15 +955,19 @@ button:hover {
     align-items: center;
 }
 
-.image-grid {
+.left-section {
+    text-align: left;
     width: 50%;
+    padding-right: 50px;
+}
+
+.image-grid {
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     gap: 15px;
-    padding: 20px;
-    padding-top: 0%;
-    padding-bottom: 0%;
+    padding: 0%;
 }
 
 .grid-image {
@@ -1007,4 +1011,301 @@ button:hover {
     color: #ff00ff; /* Magenta color for emojis */
     margin-right: 8px;
     font-size: 1.1em;
+}
+
+/* ==============================
+   Animation Classes
+============================== */
+.animate-from-left {
+    opacity: 0;
+    transform: translateX(-100px);
+    animation: slideInFromLeft 1s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+.animate-from-right {
+    opacity: 0;
+    transform: translateX(100px);
+    animation: slideInFromRight 1s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+.animate-from-bottom {
+    opacity: 0;
+    transform: translateY(100px);
+    animation: slideInFromBottom 1s ease-out forwards;
+    animation-delay: 0.7s;
+}
+
+@keyframes slideInFromLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromBottom {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==============================
+   Commercial Readiness Section
+============================== */
+
+
+.commercial-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(0, 255, 191, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 255, 191, 0.3);
+    border-radius: 12px;
+    padding: 60px 40px;
+    color: #ffffff;
+}
+
+.commercial-container h2 {
+    color: #00ffc1;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 600;
+}
+
+.readiness-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.readiness-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 191, 0.2);
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.readiness-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 191, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.readiness-card:hover::before {
+    left: 100%;
+}
+
+.readiness-card:hover {
+    transform: translateY(-10px);
+    border-color: #00ffc1;
+    box-shadow: 0 20px 40px rgba(0, 255, 191, 0.2);
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #00ffc1;
+}
+
+.readiness-card h3 {
+    color: #00ffc1;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.readiness-card p {
+    color: #ffffff;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff00ff;
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+}
+
+.stat-label {
+    color: #cccccc;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.industries-served {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.industries-served h3 {
+    color: #00ffc1;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.industry-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.industry-tag {
+    background: linear-gradient(135deg, rgba(255, 0, 255, 0.2), rgba(255, 0, 255, 0.1));
+    border: 1px solid rgba(255, 0, 255, 0.4);
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.industry-tag:hover {
+    background: linear-gradient(135deg, rgba(255, 0, 255, 0.4), rgba(255, 0, 255, 0.2));
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 0, 255, 0.3);
+    border-color: #ff00ff;
+}
+
+.cta-section {
+    text-align: center;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    border: 1px solid rgba(0, 255, 191, 0.2);
+}
+
+.cta-section h3 {
+    color: #00ffc1;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.cta-section p {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.cta-btn {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    min-width: 180px;
+}
+
+.cta-btn.primary {
+    background: linear-gradient(135deg, #00ffc1, #00ff80);
+    color: #000000;
+}
+
+.cta-btn.primary:hover {
+    background: linear-gradient(135deg, #40ffda, #40ffa0);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 255, 193, 0.4);
+}
+
+.cta-btn.secondary {
+    background: transparent;
+    color: #00ffc1;
+    border: 2px solid #00ffc1;
+}
+
+.cta-btn.secondary:hover {
+    background: rgba(0, 255, 193, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 255, 193, 0.2);
+}
+
+/* ==============================
+   Commercial Section Responsive
+============================== */
+@media (max-width: 768px) {
+    .commercial-section {
+        padding: 40px 15px;
+    }
+    
+    .commercial-container {
+        padding: 40px 20px;
+    }
+    
+    .commercial-container h2 {
+        font-size: 2rem;
+    }
+    
+    .readiness-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .readiness-card {
+        padding: 25px;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-btn {
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    .industries-served h3 {
+        font-size: 1.5rem;
+    }
+    
+    .industry-tag {
+        font-size: 0.9rem;
+        padding: 10px 16px;
+    }
 }
