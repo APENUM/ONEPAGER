@@ -201,6 +201,15 @@ class ThreeJSViewer {
         this.renderer.shadowMap.enabled = true;
         this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
         this.renderer.setClearColor(0x263238, 1);
+        
+        // Make sure the canvas covers the full viewport
+        this.renderer.domElement.style.position = 'fixed';
+        this.renderer.domElement.style.top = '0';
+        this.renderer.domElement.style.left = '0';
+        this.renderer.domElement.style.width = '100vw';
+        this.renderer.domElement.style.height = '100vh';
+        this.renderer.domElement.style.zIndex = '1';
+        
         document.getElementById('container').appendChild(this.renderer.domElement);
     }
 
@@ -536,6 +545,13 @@ class ThreeJSViewer {
             this.camera.aspect = window.innerWidth / window.innerHeight;
             this.camera.updateProjectionMatrix();
             this.renderer.setSize(window.innerWidth, window.innerHeight);
+            
+            // Ensure canvas maintains fixed positioning
+            this.renderer.domElement.style.position = 'fixed';
+            this.renderer.domElement.style.top = '0';
+            this.renderer.domElement.style.left = '0';
+            this.renderer.domElement.style.width = '100vw';
+            this.renderer.domElement.style.height = '100vh';
         }
     }
 
