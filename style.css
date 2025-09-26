@@ -919,11 +919,36 @@ button:hover {
     font-weight: 600;
 }
 
+.text-container h3 {
+    color: inherit; /* This will inherit the same color as h2 */
+    font-size: 1.5em;
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+.text-container h4 {
+    color: inherit; /* This will inherit the same color as h2 */
+    font-size: 1.2em;
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+}
+
 .text-container p {
     font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 20px;
     color: #ffffff;
+}
+
+.text-container ul {
+    margin: 1em 0;
+    padding-left: 1.5em;
+}
+
+.text-container li {
+    margin-bottom: 0.5em;
+    display: flex;
+    align-items: center;
 }
 
 .image-grid {
@@ -933,6 +958,8 @@ button:hover {
     grid-template-rows: repeat(3, 1fr);
     gap: 15px;
     padding: 20px;
+    padding-top: 0%;
+    padding-bottom: 0%;
 }
 
 .grid-image {
@@ -970,4 +997,10 @@ button:hover {
 
 .text-container::-webkit-scrollbar-thumb:hover {
     background: #40ffda;
+}
+
+.feature-emoji {
+    color: #ff00ff; /* Magenta color for emojis */
+    margin-right: 8px;
+    font-size: 1.1em;
 }
